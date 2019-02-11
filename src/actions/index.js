@@ -7,3 +7,12 @@ export function setPosts() {
     payload: promise
   };
 }
+
+export function setPost(id) {
+  const url = `http://reduxblog.herokuapp.com/api/posts/${id}?key=123`;
+  const promise = fetch(url).then(response => response.json());;
+  return {
+    type: "SET_POST",
+    payload: promise
+  };
+}

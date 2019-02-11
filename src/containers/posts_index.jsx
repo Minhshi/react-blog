@@ -12,10 +12,12 @@ class PostsIndex extends React.Component {
   renderPosts() {
     return this.props.posts.map(post => {
       return (
-        <div className="posts-item">
-          <h4>{post.title}</h4>
-          <p>{post.content}</p>
-        </div>
+        <Link to={`/posts/${post.id}`} key={post.id}>
+          <div className="posts-item">
+            <h4>{post.title}</h4>
+            <p>{post.content}</p>
+          </div>
+        </Link>
       );
     });
   }
