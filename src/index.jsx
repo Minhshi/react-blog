@@ -7,6 +7,7 @@ import logger from "redux-logger";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createHistory as history } from "history";
 import PostsIndex from "./containers/posts_index";
+import PostsNew from "./containers/posts_new"
 import PostsShow from "./containers/posts_show"
 
 import "../assets/stylesheets/application.scss";
@@ -25,6 +26,7 @@ ReactDOM.render(
     <Router history={history}>
       <Switch>
         <Route path="/" exact component={PostsIndex} />
+        <Route path="/posts/new" exact component={PostsNew}/>
         <Route path="/posts/:id" component={PostsShow}/>
       </Switch>
     </Router>
