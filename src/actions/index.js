@@ -17,13 +17,13 @@ export function setPost(id) {
   };
 }
 
-export function createPost(body) {
+export function createPost(body, callback) {
   const url = "http://reduxblog.herokuapp.com/api/posts?key=123";
   const promise = fetch(url, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
-  }).then(response => response.json())
+  }).then(response => response.json()).then(callback)
   return {
     type: "CREATE_POST",
     payload: promise

@@ -10,12 +10,15 @@ import PostsIndex from "./containers/posts_index";
 import PostsNew from "./containers/posts_new"
 import PostsShow from "./containers/posts_show"
 
+import { reducer as formReducer } from 'redux-form';
+
 import "../assets/stylesheets/application.scss";
 
 import postsReducer from "./reducers/posts_reducer";
 
 const reducers = combineReducers({
-  posts: postsReducer
+  posts: postsReducer,
+  form: formReducer
 });
 
 const middlewares = applyMiddleware(reduxPromise, logger);
